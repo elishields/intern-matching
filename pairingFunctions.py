@@ -18,9 +18,7 @@ def setEndorsers(intern, interns):
 # compare intern attributes
 def scorePair(intern, other_intern):
     compatibility_score = 0
-    attributes = ["team", "position", "product", "skills"]
-    matching_words = []
-    for attribute in attributes:
+    for attribute in ["team", "position", "product", "skills"]:
         for word in getattr(intern, attribute).split():
             if word in getattr(other_intern, attribute).split():
                 compatibility_score += 1
