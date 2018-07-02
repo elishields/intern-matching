@@ -32,20 +32,6 @@ def rankEndorsers(intern):
 def pruneEndorsers(intern):
     intern.endorsers = {key: value for key, value in intern.endorsers.items() if value is not 0}
 
-# implement stable marriage algo
-# https://en.wikipedia.org/wiki/Stable_marriage_problem#Algorithm
-def pairEndorsers(interns):
-    rounds = len(interns) - 1
-    for round in range(rounds):
-        findPartners(interns)
-
-# def findPartners(interns):
-#     pairs = {}
-#     for intern in interns:
-#         pairs.update({intern: 0})
-#     while 0 in pairs.values():
-#
-
 def getPairs(interns):
     for intern in interns:
         print (intern.name.upper())
