@@ -1,12 +1,6 @@
 from intern import Intern
 from collections import OrderedDict
 from helperFunctions import *
-
-def setPairs(interns):
-    for intern in interns:
-        setEndorsers(intern, interns)
-        rankEndorsers(intern)
-        pruneEndorsers(intern)
         # pairEndorsers(interns)
 
 def setEndorsers(intern, interns):

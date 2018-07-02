@@ -14,6 +14,7 @@ class Intern:
         self.skills = ""
 
         self.endorsers = {}
+        # self.pairs = {round: [counterparty, rank]}
 
         self.team, self.position, self.product, self.skills = helperFunctions.getAttributes(self.row)
 
