@@ -1,2 +1,5 @@
 # intern-matching
-Build LinkedIn endorser-endorsee pairs of interns
+
+Build endorser-endorsee pairs of interns for LinkedIn Skills Session.
+
+This was fun.
