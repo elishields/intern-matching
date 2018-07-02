@@ -37,16 +37,16 @@ def pruneEndorsers(intern):
 # implement stable marriage algo
 # https://en.wikipedia.org/wiki/Stable_marriage_problem#Algorithm
 def pairEndorsers(interns):
-    rounds = len(interns) / 2
+    rounds = len(interns) - 1
     for round in range(rounds):
-        marry(interns)
+        findPartners(interns)
 
-# def marry(interns):
+# def findPartners(interns):
 #     pairs = {}
 #     for intern in interns:
 #         pairs.update({intern: 0})
 #     while 0 in pairs.values():
-#       print (deez nyets)
+#
 
 def getPairs(interns):
     for intern in interns:
