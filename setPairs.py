@@ -26,7 +26,12 @@ def rankEndorsers(intern):
 def pruneEndorsers(intern):
     intern.endorsers = {key: value for key, value in intern.endorsers.items() if value is not 0}
 
-def getPairs(interns):
+def setPairs(interns):
+    round = len(interns) - 1
+    for round in range(rounds):
+        setPair
+
+def getEndorsers(interns):
     for intern in interns:
         print (intern.name.upper())
         for key, value in intern.endorsers.items():

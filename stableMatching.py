@@ -1,4 +1,3 @@
-# implement stable marriage algo
 # https://en.wikipedia.org/wiki/Stable_marriage_problem#Algorithm
 def stableMatching():
     # while round <= rounds
@@ -14,18 +13,35 @@ def stableMatching():
                     # (!intern, ideal_intern) stay paired
                     # intern moves on
 
-    variables:
-        current round
-        intern
-            free
-    functions:
-        checkFree(ideal_intern)
-        pair(intern, ideal_intern)
-        free(not_intern, ideal_intern)
-        checkIdeal(intern, not_intern)
+    def checkFree(round, ideal_intern):
+        if ideal_intern.pairs[round] == None:
+            return True
+        else:
+            return False
 
+    def pair(round, intern, ideal_intern):
+        ideal_intern_rank = 0
+        for endorser in intern.endorsers:
+            if endorser.name == ideal_intern.name:
+                ideal_intern_rank = endorser.value()
+        intern.pairs[round] = [ideal_intern, ideal_intern_rank]
 
+    def free(round, not_intern):
+        intern.pairs[round] = None
 
+    def compareIdeal(intern, not_intern):
+        intern_rank = 0
+        not_intern_rank = 0
+        intern.endorsers[intern].value
+
+    def getPairs(intern):
+        for pair in intern.pairs:
+            print pair
+
+    def checkUnpairedExists(round, interns):
+        for intern in interns:
+            if intern.pairs[round] = None:
+                return True
 
 def pairEndorsers(interns):
     rounds = len(interns) - 1
