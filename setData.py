@@ -37,9 +37,14 @@ def createInterns(dataset):
             return interns
     return interns
 
+# Read attributes from spreadsheet and pass to intern instance variables
 def sendAttributes(dataset, intern, row):
     att_list = []
     for cell, in dataset.iter_cols(min_row=row, max_row=row, min_col=2, max_col=5):
         att_list.append(cell.value)
     attributes = (att_list[0], att_list[1], att_list[2], att_list[3])
     intern.setAttributes(attributes)
+
+# Max rounds is each intern pairing with every other intern
+def getRounds(interns):
+    return len(interns) - 1
