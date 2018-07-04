@@ -14,7 +14,6 @@ def main(raw_data):
         pruneEndorsers(intern)
     getEndorsers(interns)
 
-    # set endorser-endorsee pairs for each round
     # setPairs(interns)
     # getPairs(interns)
 
