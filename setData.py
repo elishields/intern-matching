@@ -48,3 +48,13 @@ def sendAttributes(dataset, intern, row):
 # Max rounds is each intern pairing with every other intern
 def getRounds(interns):
     return len(interns) - 1
+
+def endorsersHeader():
+    print ("===========")
+    print (" ENDORSERS")
+    print ("===========\n")
+
+def pairsHeader():
+    print ("=======")
+    print (" PAIRS")
+    print ("=======\n")

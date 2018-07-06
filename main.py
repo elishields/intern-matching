@@ -4,6 +4,8 @@ from setEndorsers import *
 
 def main(raw_data):
 
+    print ("\nSTART\n")
+
     dataset = loadExcel(raw_data)
     checkData(dataset)
 
@@ -12,12 +14,16 @@ def main(raw_data):
         setEndorsers(intern, interns)
         rankEndorsers(intern)
         pruneEndorsers(intern)
+    endorsersHeader()
     getEndorsers(interns)
 
+
+    pairsHeader()
     rounds = getRounds(interns)
     for round in range(rounds):
-        print (round)
-        # setPairs(round, interns)
-    # getPairs(interns)
+        setPairs(round, interns)
+    getPairs(interns)
+
+    print ("\nEND\n")
 
 main("../dataset.xlsx")

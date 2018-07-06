@@ -13,7 +13,7 @@ class Intern:
 
         # self.endorsers = {'eli': 7}
         self.endorsers = {}
-        # self.pairs = {round: [counterparty, rank]}
+        # self.pairs = {round: [counterparty, rank, [proposed]]}
         self.pairs = {}
 
     def __str__(self):
