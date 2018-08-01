@@ -1,8 +1,13 @@
 import sys
+import pandas
 from openpyxl import *
 from collections import OrderedDict
 
 from intern import Intern
+
+def loadExcelWithPandas(excel_file):
+    pandas.read(excel_file)
+
 
 # Load Excel spreadsheet into iterable columns and rows
 def loadExcel(raw_data):
@@ -58,3 +63,9 @@ def pairsHeader():
     print ("=======")
     print (" PAIRS")
     print ("=======\n")
+
+def getIntern(interns, intern_name):
+    intern_name = str(intern_name)
+    for intern in interns:
+        if intern.name == intern_name:
+            return intern

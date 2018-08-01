@@ -17,11 +17,9 @@ def main(raw_data):
     endorsersHeader()
     getEndorsers(interns)
 
-
     pairsHeader()
     rounds = getRounds(interns)
-    for round in range(rounds):
-        setPairs(round, interns)
+    setPairs(rounds, interns)
     getPairs(interns)
 
     print ("\nEND\n")
