@@ -15,6 +15,7 @@ def main(excel_file):
 
     printHeader("CREATING INTERNS")
     interns = createInterns(dataset)
+    print (interns)
 
     printHeader("RANKING ENDORSERS")
     # for intern in interns:
