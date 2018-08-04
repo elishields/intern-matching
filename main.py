@@ -13,7 +13,7 @@ def main(excel_file):
     printHeader("PRINTING DATASET")
     printData(dataset)
 
-    printHeader("CREATING INTERNS")
+    printHeader("CREATING INTERN OBJECTS")
     interns = createInterns(dataset)
     print (interns)
 

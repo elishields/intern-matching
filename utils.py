@@ -5,6 +5,7 @@ def printHeader(header):
     for i in range(len(header) + 4):
         border += '-'
     title = '  ' + header + '  '
+    print ()
     print (border)
     print (title)
     print (border)

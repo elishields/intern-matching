@@ -26,6 +26,7 @@ def createInterns(dataset):
             sendAttributes(dataset, newIntern, index)
         else:
             return interns
+    return interns
 
 # def sendAttributes(dataset, intern, row):
 #     att_list = []
@@ -37,9 +38,9 @@ def createInterns(dataset):
 # Set intern instance variables with attributes from dataset
 def sendAttributes(dataset, intern, row):
     att_list = []
-    for column in dataset:
-        att_list.append(column[row])
-    attributes = (att_list[0], att_list[1], att_list[2], att_list[3])
+    for index, attributes in dataset.iterrows():
+        if index == row:
+            att_list = (attributes[0], attributes[1], attributes[2], attributes[3])
     intern.setAttributes(attributes)
 
 def getIntern(interns, intern_name):
