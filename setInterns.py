@@ -1,4 +1,5 @@
 import pandas
+from intern import Intern
 
 # def createInterns(dataset):
 #     interns = []

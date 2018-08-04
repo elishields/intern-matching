@@ -1,7 +1,6 @@
 import sys
 import numpy
 import pandas
-from intern import Intern
 
 # Filepath to Excel object as param
 def loadExcel(excel_file):
