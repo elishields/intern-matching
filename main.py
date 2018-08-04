@@ -5,14 +5,13 @@ from loggingFunctions import *
 
 def main(excel_file):
 
-    printHeader("START")
-
+    printHeader("LOADING DATA")
     dataset = loadExcel(excel_file)
+    checkData(dataset)
+
+    printHeader("PRINTING DATASET")
     printDataset(dataset)
-    # checkData(dataset)
-    #
-    # printHeader("DATASET")
-    #
+
     # interns = createInterns(dataset)
     # for intern in interns:
     #     setEndorsers(intern, interns)
