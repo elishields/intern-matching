@@ -5,15 +5,18 @@ from collections import OrderedDict
 
 from intern import Intern
 
-def loadExcelWithPandas(excel_file):
-    pandas.read(excel_file)
-
+# Filepath to Excel object as param
+def loadExcel(excel_file):
+    # Read Excel table into pandas DataFrame (2D table)
+    # Reads first sheet by default
+    dataset = pandas.read_excel(excel_file)
+    return dataset
 
 # Load Excel spreadsheet into iterable columns and rows
-def loadExcel(raw_data):
-    workbook = load_workbook(raw_data, data_only=True)
-    spreadsheet = workbook["InternData"]
-    return spreadsheet
+# def loadExcel(raw_data):
+#     workbook = load_workbook(raw_data, data_only=True)
+#     spreadsheet = workbook["InternData"]
+#     return spreadsheet
 
 # Verify that each intern name is unique
 def checkData(dataset):
@@ -53,16 +56,6 @@ def sendAttributes(dataset, intern, row):
 # Max rounds is each intern pairing with every other intern
 def getRounds(interns):
     return len(interns) - 1
-
-def endorsersHeader():
-    print ("===========")
-    print (" ENDORSERS")
-    print ("===========\n")
-
-def pairsHeader():
-    print ("=======")
-    print (" PAIRS")
-    print ("=======\n")
 
 def getIntern(interns, intern_name):
     intern_name = str(intern_name)
