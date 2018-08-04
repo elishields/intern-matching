@@ -1,29 +1,31 @@
 from setData import *
 from setPairs import *
 from setEndorsers import *
+from loggingFunctions import *
 
-def main(raw_data):
+def main(excel_file):
 
-    print ("\nSTART\n")
-
-    dataset = loadExcel(raw_data)
+    printHeader("LOADING DATA")
+    dataset = loadExcel(excel_file)
     checkData(dataset)
 
-    interns = createInterns(dataset)
-    for intern in interns:
-        setEndorsers(intern, interns)
-        rankEndorsers(intern)
-        pruneEndorsers(intern)
-    endorsersHeader()
-    getEndorsers(interns)
+    printHeader("PRINTING DATASET")
+    printDataset(dataset)
 
-
-    pairsHeader()
-    rounds = getRounds(interns)
-    for round in range(rounds):
-        setPairs(round, interns)
-    getPairs(interns)
-
-    print ("\nEND\n")
+    # interns = createInterns(dataset)
+    # for intern in interns:
+    #     setEndorsers(intern, interns)
+    #     rankEndorsers(intern)
+    #     pruneEndorsers(intern)
+    #
+    # printHeader("ENDORSERS")
+    # getEndorsers(interns)
+    #
+    # printHeader("PAIRS")
+    # rounds = getRounds(interns)
+    # setPairs(rounds, interns)
+    # getPairs(interns)
+    #
+    # printHeader("END")
 
 main("../dataset.xlsx")
