@@ -26,6 +26,7 @@ def rankEndorsers(intern):
 def pruneEndorsers(intern):
     intern.endorsers = {key: value for key, value in intern.endorsers.items() if value is not 0}
 
+# Print out endorsers for each intern in name:rank format
 def getEndorsers(interns):
     for intern in interns:
         print (intern.name.upper())
