@@ -2,14 +2,12 @@ import sys
 import numpy
 import pandas
 from openpyxl import *
-from collections import OrderedDict
-
 from intern import Intern
+from collections import OrderedDict
 
 # Filepath to Excel object as param
 def loadExcel(excel_file):
-    # Read Excel table into pandas DataFrame (2D table)
-    # Reads first sheet by default
+    # Read first sheet from Excel into pandas DataFrame (2D table)
     dataset = pandas.read_excel(excel_file)
     return dataset
 
@@ -23,9 +21,10 @@ def checkData(dataset):
     counted_names = dict(zip(name, occurrences))
     if not all(count == 1 for count in counted_names.values()):
         sys.exit("Multiple occurrences of a name.")
+    return (len(names))
 
 # Create intern objects with attributes read
-def createInterns(dataset):
+def createInterns(dataset, interns_count):
     interns = []
     row = 1
     for intern, in dataset.iter_rows(max_col=1):
@@ -37,6 +36,15 @@ def createInterns(dataset):
         if intern.value == None:
             return interns
     return interns
+
+def createInterns(dataset):
+    interns = []
+    for index, row in dataset.iterrows():
+
+        newIntern = Intern(index, row[0])
+        interns.append(newIntern)
+        sendAttributes(dataset, newIntern, index)
+
 
 # Read attributes from spreadsheet and pass to intern instance variables
 def sendAttributes(dataset, intern, row):

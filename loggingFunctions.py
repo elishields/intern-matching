@@ -9,7 +9,7 @@ def printHeader(header):
     print (title)
     print (border)
 
-def printDataset(dataset):
+def printData(dataset):
     print (tabulate(dataset, headers='keys', tablefmt='psql'))
 
 def printInterns(interns):

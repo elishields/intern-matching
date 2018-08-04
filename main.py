@@ -7,14 +7,13 @@ def main(excel_file):
 
     printHeader("LOADING DATA")
     dataset = loadExcel(excel_file)
-    checkData(dataset)
+    interns_count = checkData(dataset)
 
     printHeader("PRINTING DATASET")
-    printDataset(dataset)
+    printData(dataset)
 
     printHeader("CREATING INTERNS")
     interns = createInterns(dataset)
-    
 
     printHeader("RANKING ENDORSERS")
     # for intern in interns:
