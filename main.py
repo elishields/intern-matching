@@ -33,4 +33,4 @@ def main(excel_file):
     #
     # printHeader("END")
 
-main("../dataset.xlsx")
+main("dataset.xlsx")
