@@ -15,3 +15,7 @@ def printData(dataset):
 def printInterns(interns):
     for intern in interns:
         print (intern)
+
+# Max rounds is each intern pairing with every other intern
+def getRounds(interns):
+    return len(interns) - 1

@@ -1,13 +1,14 @@
+from utils import *
 from setData import *
 from setPairs import *
+from setInterns import *
 from setEndorsers import *
-from loggingFunctions import *
 
 def main(excel_file):
 
     printHeader("LOADING DATA")
     dataset = loadExcel(excel_file)
-    interns_count = checkData(dataset)
+    checkData(dataset)
 
     printHeader("PRINTING DATASET")
     printData(dataset)
@@ -24,7 +25,7 @@ def main(excel_file):
     # printHeader("ENDORSERS")
     # getEndorsers(interns)
     #
-    # printHeader("PAIRS")
+    # printHeader("SETTING PAIRS")
     # rounds = getRounds(interns)
     # setPairs(rounds, interns)
     # getPairs(interns)
