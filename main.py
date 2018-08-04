@@ -12,7 +12,11 @@ def main(excel_file):
     printHeader("PRINTING DATASET")
     printDataset(dataset)
 
-    # interns = createInterns(dataset)
+    printHeader("CREATING INTERNS")
+    interns = createInterns(dataset)
+    
+
+    printHeader("RANKING ENDORSERS")
     # for intern in interns:
     #     setEndorsers(intern, interns)
     #     rankEndorsers(intern)

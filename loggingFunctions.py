@@ -11,3 +11,7 @@ def printHeader(header):
 
 def printDataset(dataset):
     print (tabulate(dataset, headers='keys', tablefmt='psql'))
+
+def printInterns(interns):
+    for intern in interns:
+        print (intern)
