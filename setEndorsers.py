@@ -18,6 +18,8 @@ def scoreEndorser(intern, other_intern):
         for word in getattr(intern, attribute).split():
             if word in getattr(other_intern, attribute).split():
                 compatibility_score += 1
+    if intern.name == "chaos_intern" or other_intern.name == "chaos_intern":
+        compatibility_score = 1
     return compatibility_score
 
 # Order endorsers dictionary by quantity of matches

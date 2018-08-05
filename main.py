@@ -1,8 +1,8 @@
-from utils import *
-from setData import *
+from utils import printHeader, printData, getRounds
+from setData import loadExcel, checkData
+from setInterns import createInterns
+from setEndorsers import setEndorsers, getEndorsers
 from setPairs import *
-from setInterns import *
-from setEndorsers import *
 
 def main(excel_file):
 
@@ -18,10 +18,10 @@ def main(excel_file):
     setEndorsers(interns)
     getEndorsers(interns)
 
-    # printHeader("SETTING PAIRS")
-    # rounds = getRounds(interns)
-    # setPairs(rounds, interns)
-    # getPairs(interns)
+    printHeader("SETTING PAIRS")
+    rounds = getRounds(interns)
+    setPairs(rounds, interns)
+    getPairs(interns)
 
     printHeader("END")
 

@@ -19,7 +19,11 @@ def sendAttributes(dataset, intern, location):
             return
 
 def getIntern(interns, intern_name):
-    intern_name = str(intern_name)
     for intern in interns:
         if intern.name == intern_name:
+            return intern
+
+def getChaosIntern(interns):
+    for intern in interns:
+        if intern.name == "chaos_intern":
             return intern
