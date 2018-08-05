@@ -1,5 +1,5 @@
 from intern import Intern
-from setInterns import getIntern
+from setInterns import getIntern, getChaosIntern
 
 def initializePairs(round, interns):
     for intern in interns:
@@ -21,7 +21,8 @@ def hasNotProposed(round, intern, endorser):
     return endorser not in intern.pairs[round][2]
 
 def hasNotMatched(round, intern, endorser):
-    for previousRound in range(round):
+    for previousRound in range(0, round):
+        internname = intern.name
         if intern.pairs[round][0] == endorser:
             return False
     return True
@@ -46,9 +47,8 @@ def pair(round, intern, match, rank):
         match.pairs[round][2].append(intern)
 
 def proposeNewPair(round, intern, match, proposed_rank):
+    intern.pairs[round][2].append(match.name)
     current_rank = match.pairs[round][1]
-    if match not in intern.pairs[round][2]:
-        intern.pairs[round][2].append(match)
     return proposed_rank >= current_rank
 
 def free(round, intern, interns):
@@ -66,8 +66,11 @@ def setPairs(rounds, interns):
         while unpairedExists(round, interns) is not None:
             intern_to_pair = unpairedExists(round, interns)
             ideal_match = findIdealMatch(round, intern_to_pair, interns)
+            if ideal_match == None:
+                ideal_match = getChaosIntern(interns)
+            print (intern_to_pair, ideal_match)
+            rank = rankPair(intern_to_pair, ideal_match)
             if checkFree(round, interns, ideal_match):
-                rank = rankPair(intern_to_pair, ideal_match)
                 pair(round, intern_to_pair, ideal_match, rank)
             else:
                 if proposeNewPair(round, intern_to_pair, ideal_match, rank):
