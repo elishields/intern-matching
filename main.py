@@ -9,8 +9,6 @@ def main(excel_file):
     printHeader("LOADING DATA")
     dataset = loadExcel(excel_file)
     checkData(dataset)
-
-    printHeader("PRINTING DATASET")
     printData(dataset)
 
     printHeader("CREATING INTERN OBJECTS")
