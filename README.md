@@ -11,6 +11,7 @@ Each intern is an object with string attributes for:
   - position
   - product
   - skills
+
 Each intern has their compatibility with every other intern ranked.
 The ranking is a simple count of how many similar terms are in their string attributes.
 Interns are paired up each round, like speed dating.
