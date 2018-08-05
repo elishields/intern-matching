@@ -28,7 +28,7 @@ def rankEndorsers(intern):
 
 # Remove endorsers with no compatibililty from dictionary
 def pruneEndorsers(intern):
-    intern.endorsers = {key: value for key, value in intern.endorsers.items() if value is not 0 or key is "chaos_intern"}
+    intern.endorsers = {key: value for key, value in intern.endorsers.items() if value is not 0}
 
 # Print out endorsers for each intern in name:rank format
 def getEndorsers(interns):
