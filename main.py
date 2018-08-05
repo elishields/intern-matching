@@ -18,10 +18,10 @@ def main(excel_file):
     setEndorsers(interns)
     getEndorsers(interns)
 
-    # printHeader("SETTING PAIRS")
-    # rounds = getRounds(interns)
-    # setPairs(rounds, interns)
-    # getPairs(interns)
+    printHeader("SETTING PAIRS")
+    rounds = getRounds(interns)
+    setPairs(rounds, interns)
+    getPairs(interns)
 
     printHeader("END")
 
