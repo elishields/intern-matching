@@ -1,7 +1,8 @@
+from utils import *
 from setData import *
 from setPairs import *
+from setInterns import *
 from setEndorsers import *
-from loggingFunctions import *
 
 def main(excel_file):
 
@@ -10,9 +11,12 @@ def main(excel_file):
     checkData(dataset)
 
     printHeader("PRINTING DATASET")
-    printDataset(dataset)
+    printData(dataset)
 
-    # interns = createInterns(dataset)
+    printHeader("CREATING INTERN OBJECTS")
+    interns = createInterns(dataset)
+
+    printHeader("RANKING ENDORSERS")
     # for intern in interns:
     #     setEndorsers(intern, interns)
     #     rankEndorsers(intern)
@@ -21,11 +25,11 @@ def main(excel_file):
     # printHeader("ENDORSERS")
     # getEndorsers(interns)
     #
-    # printHeader("PAIRS")
+    # printHeader("SETTING PAIRS")
     # rounds = getRounds(interns)
     # setPairs(rounds, interns)
     # getPairs(interns)
     #
     # printHeader("END")
 
-main("../dataset.xlsx")
+main("dataset.xlsx")
