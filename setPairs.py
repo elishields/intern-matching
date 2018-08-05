@@ -68,7 +68,6 @@ def setPairs(rounds, interns):
             ideal_match = findIdealMatch(round, intern_to_pair, interns)
             if ideal_match == None:
                 ideal_match = getChaosIntern(interns)
-            print (intern_to_pair, ideal_match)
             rank = rankPair(intern_to_pair, ideal_match)
             if checkFree(round, interns, ideal_match):
                 pair(round, intern_to_pair, ideal_match, rank)
