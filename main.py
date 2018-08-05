@@ -15,6 +15,9 @@ def main(excel_file):
     interns = createInterns(dataset)
 
     printHeader("RANKING ENDORSERS")
+    setEndorsers(interns)
+    print (interns[4].endorsers)
+
     # for intern in interns:
     #     setEndorsers(intern, interns)
     #     rankEndorsers(intern)
