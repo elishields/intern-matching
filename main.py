@@ -16,21 +16,13 @@ def main(excel_file):
 
     printHeader("RANKING ENDORSERS")
     setEndorsers(interns)
-    print (interns[4].endorsers)
+    getEndorsers(interns)
 
-    # for intern in interns:
-    #     setEndorsers(intern, interns)
-    #     rankEndorsers(intern)
-    #     pruneEndorsers(intern)
-    #
-    # printHeader("ENDORSERS")
-    # getEndorsers(interns)
-    #
     # printHeader("SETTING PAIRS")
     # rounds = getRounds(interns)
     # setPairs(rounds, interns)
     # getPairs(interns)
-    #
-    # printHeader("END")
+
+    printHeader("END")
 
 main("dataset.xlsx")
