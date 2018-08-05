@@ -18,6 +18,8 @@ def scoreEndorser(intern, other_intern):
         for word in getattr(intern, attribute).split():
             if word in getattr(other_intern, attribute).split():
                 compatibility_score += 1
+    if intern.name == "chaos_intern" or other_intern.name == "chaos_intern":
+        compatibility_score = 1
     return compatibility_score
 
 # Order endorsers dictionary by quantity of matches
@@ -26,7 +28,7 @@ def rankEndorsers(intern):
 
 # Remove endorsers with no compatibililty from dictionary
 def pruneEndorsers(intern):
-    intern.endorsers = {key: value for key, value in intern.endorsers.items() if value is not 0}
+    intern.endorsers = {key: value for key, value in intern.endorsers.items() if value is not 0 or key is "chaos_intern"}
 
 # Print out endorsers for each intern in name:rank format
 def getEndorsers(interns):
