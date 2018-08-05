@@ -3,7 +3,7 @@ from setInterns import getIntern
 
 def initializePairs(round, interns):
     for intern in interns:
-        intern.pairs.update({ round: [None, None, []] })
+        intern.pairs.update({ round: [None, 0, []] })
 
 def unpairedExists(round, interns):
     for intern in interns:
@@ -31,10 +31,11 @@ def checkFree(round, interns, ideal_match):
 
 def rankPair(intern, match):
     for endorser_name, endorser_score in intern.endorsers.items():
-        if endorser_name == match:
+        if endorser_name == match.name:
             return endorser_score
 
 def pair(round, intern, match, rank):
+    print ("pairing: " + intern.name + " " + match.name)
     intern.pairs[round][0] = match
     intern.pairs[round][1] = rank
     if match not in intern.pairs[round][2]:
@@ -48,16 +49,16 @@ def proposeNewPair(round, intern, match, proposed_rank):
     current_rank = match.pairs[round][1]
     if match not in intern.pairs[round][2]:
         intern.pairs[round][2].append(match)
-    return proposed_rank > current_rank
+    return proposed_rank >= current_rank
 
 def free(round, intern, interns):
     current_match = intern.pairs[round][0]
     intern.pairs[round][0] = None
-    intern.pairs[round][1] = None
+    intern.pairs[round][1] = 0
     for intern in interns:
         if intern.name == current_match:
             intern.pairs[round][0] = None
-            intern.pairs[round][1] = None
+            intern.pairs[round][1] = 0
 
 def setPairs(rounds, interns):
     for round in range(rounds):
@@ -77,5 +78,5 @@ def getPairs(interns):
     for intern in interns:
         print (intern.name.upper())
         for key, value in intern.pairs.items():
-            print (key, str(value[0]))
+            print (key, value[0], value[1])
         print ("\n")

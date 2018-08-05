@@ -21,7 +21,7 @@ def main(excel_file):
     printHeader("SETTING PAIRS")
     rounds = getRounds(interns)
     setPairs(rounds, interns)
-    # getPairs(interns)
+    getPairs(interns)
 
     printHeader("END")
 
