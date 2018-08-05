@@ -1,8 +1,8 @@
-from utils import *
-from setData import *
+from utils import printHeader, printData, getRounds
+from setData import loadExcel, checkData
+from setInterns import createInterns
+from setEndorsers import setEndorsers, getEndorsers
 from setPairs import *
-from setInterns import *
-from setEndorsers import *
 
 def main(excel_file):
 
