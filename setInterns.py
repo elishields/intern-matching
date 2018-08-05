@@ -1,31 +1,28 @@
 import pandas
 from intern import Intern
 
+# Create intern objects with attributes read
 # def createInterns(dataset):
+#     # Array of Intern objects
 #     interns = []
-#     row = 1
-#     for intern, in dataset.iter_rows(max_col=1):
-#         if intern.value != None:
-#             newIntern = Intern(row, intern.value)
+#     for index, row in dataset.iterrows():
+#         if len(row) > 0:
+#             # Location in spreadsheet, name
+#             newIntern = Intern(index, row[0])
 #             interns.append(newIntern)
-#             sendAttributes(dataset, newIntern, row)
-#             row += 1
-#         if intern.value == None:
+#             print ("sending", newIntern.name)
+#             sendAttributes(dataset, newIntern, index)
+#         else:
 #             return interns
 #     return interns
 
-# Create intern objects with attributes read
+# Create intern objects
 def createInterns(dataset):
-    # Array of Intern objects
     interns = []
-    for index, row in dataset.iterrows():
-        if len(row) > 0:
-            # Location in spreadsheet, name
-            newIntern = Intern(index, row[0])
-            interns.append(newIntern)
-            sendAttributes(dataset, newIntern, index)
-        else:
-            return interns
+    for row in dataset.itertuples():
+        newIntern = Intern(row.Index, row.NAME)
+        interns.append(newIntern)
+        sendAttributes(dataset, newIntern, row.Index)
     return interns
 
 # def sendAttributes(dataset, intern, row):
@@ -40,8 +37,9 @@ def sendAttributes(dataset, intern, row):
     att_list = []
     for index, attributes in dataset.iterrows():
         if index == row:
-            att_list = (attributes[0], attributes[1], attributes[2], attributes[3])
+            att_list = (attributes[1], attributes[2], attributes[3], attributes[4])
     intern.setAttributes(attributes)
+    print (attributes)
 
 def getIntern(interns, intern_name):
     intern_name = str(intern_name)
