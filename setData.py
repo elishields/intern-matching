@@ -8,6 +8,16 @@ def loadExcel(excel_file):
     dataset = pandas.read_excel(excel_file)
     return dataset
 
+def cleanData(dataset):
+    for index, row in dataset.iterrows():
+        short_name = ""
+        for char in row[0]:
+            if len(short_name) < 12:
+                short_name += char
+        row[0] = short_name
+        print (row[0])
+    return dataset
+
 # Verify that each intern name is unique
 def checkData(dataset):
     names = []
