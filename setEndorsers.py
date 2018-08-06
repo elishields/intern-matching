@@ -2,14 +2,13 @@ from intern import Intern
 from collections import OrderedDict
 
 # Record each intern's compatibility with every other intern
-def setEndorsers(interns):
+def setEndorsers(session, interns):
     for intern in interns:
         for other_intern in interns:
             if other_intern is not intern:
                 score = scoreEndorser(intern, other_intern)
                 intern.endorsers.update({other_intern.name: score})
         rankEndorsers(intern)
-        pruneEndorsers(intern)
 
 # Count similar attributes between a pair of interns
 def scoreEndorser(intern, other_intern):
@@ -18,8 +17,9 @@ def scoreEndorser(intern, other_intern):
         for word in getattr(intern, attribute).split():
             if word in getattr(other_intern, attribute).split():
                 compatibility_score += 1
+    compatibility_score += 1
     if intern.name == "chaos_intern" or other_intern.name == "chaos_intern":
-        compatibility_score = 1
+        compatibility_score = 0
     return compatibility_score
 
 # Order endorsers dictionary by quantity of matches
