@@ -12,7 +12,3 @@ def printHeader(header):
 
 def printData(dataset):
     print (tabulate(dataset, headers='keys', tablefmt='psql'))
-
-# Max rounds is each intern pairing with every other intern
-def getRounds(interns):
-    return len(interns) - 1

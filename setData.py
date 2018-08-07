@@ -1,3 +1,4 @@
+import re
 import sys
 import numpy
 import pandas
@@ -10,12 +11,16 @@ def loadExcel(excel_file):
 
 def cleanData(dataset):
     for index, row in dataset.iterrows():
-        short_name = ""
-        for char in row[0]:
-            if len(short_name) < 12:
-                short_name += char
-        row[0] = short_name
-        print (row[0])
+        for col in range(5):
+            # cleaned_data = re.sub("[\s^a-zA-Z]+", "", row[col])
+            cleaned_data = re.sub("([^\s\w]|_)+", "", row[col])
+            row[col] = cleaned_data
+    # for index, row in dataset.iterrows():
+    #     short_name = ""
+    #     for char in row[0]:
+    #         if len(short_name) < 13:
+    #             short_name += char
+    #     row[0] = short_name
     return dataset
 
 # Verify that each intern name is unique
