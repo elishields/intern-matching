@@ -79,6 +79,11 @@ def free(round, intern, interns):
 
 def getPairs(interns):
     for intern in interns:
-        printHeader(intern.name.upper())
+        print("\n" + intern.name.upper())
         for key, value in intern.pairs.items():
-            print (key, value[0], value[1])
+            round = str(key) + ": "
+            match = value[0]
+            score = "(" + str(value[1]) + ")"
+            if match == None:
+                match = "None"
+            print (round + match + score)
