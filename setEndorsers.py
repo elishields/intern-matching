@@ -18,7 +18,7 @@ def scoreEndorser(intern, other_intern):
             if word in getattr(other_intern, attribute).split():
                 compatibility_score += 1
     compatibility_score += 1
-    if intern.name == "chaos_intern" or other_intern.name == "chaos_intern":
+    if intern.name == "chaos" or other_intern.name == "chaos":
         compatibility_score = 0
     return compatibility_score
 

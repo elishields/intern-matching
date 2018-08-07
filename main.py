@@ -1,7 +1,7 @@
 from session import Session
-from utils import printHeader, printData, getRounds
+from utils import printHeader, printData
 from setData import loadExcel, cleanData, checkData
-from setInterns import createInterns, releaseChaosIntern
+from setInterns import createInterns, printInterns
 from setEndorsers import setEndorsers, getEndorsers
 from setPairs import *
 
@@ -15,23 +15,19 @@ def main(excel_file):
 
     printHeader("CREATING INTERN OBJECTS")
     interns = createInterns(dataset)
+    printHeader("RELEASING THE CHAOS_INTERN")
 
     session = Session(interns)
-    print (session)
-
-    if session.is_chaotic:
-        printHeader("RELEASING THE CHAOS_INTERN")
-        interns = releaseChaosIntern(interns)
 
     printHeader("RANKING ENDORSERS")
     setEndorsers(session, interns)
-    getEndorsers(interns)
+    # getEndorsers(interns)
 
     printHeader("SETTING PAIRS")
     setPairs(session, interns)
     printHeader("FINAL PAIRS")
     getPairs(interns)
 
-    # printHeader("END")
+    printHeader("END")
 
 main("dataset.xlsx")
