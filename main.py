@@ -13,21 +13,13 @@ def main(excel_file):
     dataset = cleanData(dataset)
     printData(dataset)
 
-    printHeader("CREATING INTERN OBJECTS")
     interns = createInterns(dataset)
-    printHeader("RELEASING THE CHAOS_INTERN")
-
     session = Session(interns)
 
-    printHeader("RANKING ENDORSERS")
     setEndorsers(session, interns)
     # getEndorsers(interns)
-
-    printHeader("SETTING PAIRS")
     setPairs(session, interns)
     printHeader("FINAL PAIRS")
     getPairs(interns)
-
-    printHeader("END")
 
 main("dataset.xlsx")
