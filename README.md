@@ -18,8 +18,8 @@ Intern objects are created using values from the dataframe.\
 Each intern has their compatibility with every other intern ranked.\
 The ranking is a simple count of how many similar terms are in the string attributes.\
 Interns are paired up each round, beginning with their most compatible counterparts.\
-All interns cannot possible be paired with their ideal counterparts in perfectly descending order (from most to least compatible).\
-This is because all interns have different order of preferences.\
+All interns cannot possibly be paired with their ideal counterparts in perfectly descending order (from most to least compatible).\
+This is because all interns have conflicting orders of preferences.\
 The Gale-Shapley Stable Marriage Algorithm is implemented to manage differences in ideal pairing preferences.
 
 The result is:
