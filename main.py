@@ -19,7 +19,7 @@ def main(excel_file):
     interns = create_interns(dataset)
     session = Session(interns)
 
-    set_endorsers(session, interns)
+    set_endorsers(interns)
     # get_endorsers(interns)
 
     set_pairs(session, interns)

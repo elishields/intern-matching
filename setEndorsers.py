@@ -1,9 +1,8 @@
-from intern import Intern
 from collections import OrderedDict
 
 
 # Record each intern's compatibility with every other intern
-def set_endorsers(session, interns):
+def set_endorsers(interns):
     for intern in interns:
         for other_intern in interns:
             if other_intern is not intern:
@@ -30,7 +29,7 @@ def rank_endorsers(intern):
     intern.endorsers = OrderedDict(sorted(intern.endorsers.items(), key=lambda kv: kv[1], reverse=True))
 
 
-# Remove endorsers with no compatibililty from dictionary
+# Remove endorsers with no compatibility from dictionary
 def prune_endorsers(intern):
     intern.endorsers = {key: value for key, value in intern.endorsers.items() if value is not 0}
 
