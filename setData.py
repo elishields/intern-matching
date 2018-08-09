@@ -3,18 +3,21 @@ import sys
 import numpy
 import pandas
 
+
 # Read Excel sheet into pandas DataFrame (2-dimensional table)
-def loadExcel(excel_file):
+def load_excel(excel_file):
     dataset = pandas.read_excel(excel_file)
     return dataset
 
-def cleanData(dataset):
-    dataset = cleanCharacters(dataset)
-    # dataset = shortenNames(dataset)
+
+def clean_data(dataset):
+    dataset = clean_characters(dataset)
+    # dataset = shorten_names(dataset)
     return dataset
 
+
 # Remove non-whitespace and non-alphabet characters from dataset
-def cleanCharacters(dataset):
+def clean_characters(dataset):
     for index, row in dataset.iterrows():
         for col in range(5):
             # cleaned_data = re.sub("[\s^a-zA-Z]+", "", row[col])
@@ -22,8 +25,9 @@ def cleanCharacters(dataset):
             row[col] = cleaned_data
     return dataset
 
+
 # Shorten names to 10 characters
-def shortenNames(dataset):
+def shorten_names(dataset):
     for index, row in dataset.iterrows():
         short_name = ""
         for char in row[0]:
@@ -32,8 +36,9 @@ def shortenNames(dataset):
         row[0] = short_name
     return dataset
 
+
 # Verify that each intern name is unique
-def checkData(dataset):
+def check_data(dataset):
     names = []
     for index, row in dataset.iterrows():
         names.append(row[0])

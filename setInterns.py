@@ -1,19 +1,20 @@
-import pandas
 from intern import Intern
 
+
 # Create intern objects
-def createInterns(dataset):
+def create_interns(dataset):
     interns = []
     for row in dataset.itertuples():
         newIntern = Intern(row.Index, row.NAME)
         interns.append(newIntern)
-        sendAttributes(dataset, newIntern, row.Index)
+        send_attributes(dataset, newIntern, row.Index)
     # if len(interns) % 2 != 0:
-    interns.append(releaseChaosIntern(interns))
+    interns.append(release_chaos_intern(interns))
     return interns
 
+
 # Set intern instance variables
-def sendAttributes(dataset, intern, location):
+def send_attributes(dataset, intern, location):
     for row in dataset.itertuples():
         if row.Index == location:
             intern.team = row.TEAM
@@ -21,7 +22,8 @@ def sendAttributes(dataset, intern, location):
             intern.product = row.PRODUCT
             intern.skills = row.SKILLS
 
-def releaseChaosIntern(interns):
+
+def release_chaos_intern(interns):
     row = len(interns)
     name = "chaos"
     chaos = Intern(row, name)
@@ -29,11 +31,13 @@ def releaseChaosIntern(interns):
         chaos.attribute = "generic"
     return chaos
 
-def printInterns(interns):
+
+def print_interns(interns):
     for intern in interns:
         print (intern.row, intern.name)
 
-def getChaosIntern(interns):
+
+def get_chaos_intern(interns):
     for intern in interns:
         if intern.name == "chaos":
             return intern
