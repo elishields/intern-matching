@@ -20,7 +20,6 @@ def clean_data(dataset):
 def clean_characters(dataset):
     for index, row in dataset.iterrows():
         for col in range(5):
-            # cleaned_data = re.sub("[\s^a-zA-Z]+", "", row[col])
             cleaned_data = re.sub("([^\s\w]|_)+", "", row[col])
             row[col] = cleaned_data
     return dataset
