@@ -1,23 +1,27 @@
 # intern-matching
 
-Built this for a LinkedIn Endorsement workshop.
-Interns endorse each other for their compatible skills.
+Ranks and pairs interns by compatibility using [Gale-Shapley Stable Marriage Algorithm](https://en.wikipedia.org/wiki/Stable_marriage_problem#Algorithm).
 
-Each intern submits Google form with their information.
-Data is aggregated into Excel spreadsheet.
-Data is read from Excel into Pandas dataframe.
-Each intern is an object with string attributes for:
+Compatibility is determined by measuring equality of string attributes for:
+  
   - team
   - position
   - product
   - skills
 
-Each intern has their compatibility with every other intern ranked.
-The ranking is a simple count of how many similar terms are in their string attributes.
-Interns are paired up each round, like speed dating.
-Interns begin with their most compatible partner.
-Their future pairs are in descending order of compatibility.
+I ran a *LinkedIn Endorsement Party* workshop using these matches.
 
-The Gale-Shapley Stable Marriage Algorithm is implemented to manage different ideal pairing preferences.
+Each intern submits information about their job to a Google Form.\
+The data is copied into an Excel spreadsheet.\
+Python reads the data from Excel into a Pandas dataframe.\
+Intern objects are created using values from the dataframe.\
+Each intern has their compatibility with every other intern ranked.\
+The ranking is a simple count of how many similar terms are in the string attributes.\
+Interns are paired up each round, beginning with their most compatible counterparts.\
+All interns cannot possible be paired with their ideal counterparts in perfectly descending order (from most to least compatible).\
+This is because all interns have different order of preferences.\
+The Gale-Shapley Stable Marriage Algorithm is implemented to manage differences in ideal pairing preferences.
 
-This was fun.
+The result is:
+  1) In general, interns will pair with more compatible interns earlier and less compatible interns later.
+  2) At no point will there be 2 interns who would prefer to be with each other than with their current match.
