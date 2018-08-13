@@ -1,7 +1,10 @@
 {
+  "sap": "",
+  "intern": "",
   "business intelligence": "bi",
   "user experience": "ux",
   "sac": "orca",
-  "sap analytics cloud": "orca",
-  "": ""
+  "analytics cloud": "orca",
+  "global technology legal compliance": "GTLC"
+
 }
