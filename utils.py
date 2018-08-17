@@ -19,11 +19,11 @@ def print_data(dataset):
 def get_rounds(interns, session):
     for round in range(session.num_rounds):
         filename = "../" + str(round+1) + ".txt"
-        file = open(filename, "w")
+        pairings_file = open(filename, "w")
         print_header(str(round + 1))
         matches_printed = []
         for intern in interns:
             matches_printed.append(intern.pairs[round][0])
             if intern.name not in matches_printed:
-                file.write(intern.name + " & " + intern.pairs[round][0] + " (" + str(intern.pairs[round][1]) + ")")
-                file.write("\n")
+                pairings_file.write(intern.name + " & " + intern.pairs[round][0] + " (" + str(intern.pairs[round][1]) + ")")
+                pairings_file.write("\n")
