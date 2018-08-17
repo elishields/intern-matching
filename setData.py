@@ -22,10 +22,9 @@ def clean_data(dataset):
 def strip_nonalpha_chars(dataset):
     for index, row in dataset.iterrows():
         for col in range(5):
-            print(row[col])
             cleaned_data = re.sub("([^\s\w]|_)+", "", row[col])
-            # cleaned_data = cleaned_data.lower()
-            # row[col] = cleaned_data
+            cleaned_data = cleaned_data.lower()
+            row[col] = cleaned_data
     return dataset
 
 
