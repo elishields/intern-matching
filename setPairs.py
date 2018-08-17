@@ -97,7 +97,7 @@ def get_pairs(interns):
             score = "(" + str(value[1]) + ")"
             if len(match) < 7:
                 match += "\t\t\t"
-            elif len(match) > 16:
+            elif len(match) > 15:
                 match += "\t"
             else:
                 match += "\t\t"
