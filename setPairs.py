@@ -7,7 +7,7 @@ def set_pairs(session, interns):
         while (unpaired_exists(round, interns) is not None) and (unpaired_exists(round, interns).name != "chaos"):
             intern_to_pair = unpaired_exists(round, interns)
             ideal_match = find_ideal_match(round, intern_to_pair, interns)
-            if ideal_match == None:
+            if ideal_match is None:
                 ideal_match = get_chaos_intern(interns)
             rank = rankPair(intern_to_pair, ideal_match)
             propose(round, intern_to_pair, ideal_match, rank, interns)
@@ -101,4 +101,4 @@ def get_pairs(interns):
                 match += "\t"
             else:
                 match += "\t\t"
-            print (round + "\t" + match + " " + score)
+            print(" " + round + "\t" + match + " " + score)
