@@ -14,7 +14,7 @@ def load_excel(excel_file):
 def clean_data(dataset):
     dataset = strip_nonalpha_chars(dataset)
     dataset = rename_keywords(dataset)
-    # dataset = strip_duplicates(dataset)
+    dataset = strip_duplicates(dataset)
     return dataset
 
 
@@ -22,9 +22,10 @@ def clean_data(dataset):
 def strip_nonalpha_chars(dataset):
     for index, row in dataset.iterrows():
         for col in range(5):
+            print(row[col])
             cleaned_data = re.sub("([^\s\w]|_)+", "", row[col])
-            cleaned_data = cleaned_data.lower()
-            row[col] = cleaned_data
+            # cleaned_data = cleaned_data.lower()
+            # row[col] = cleaned_data
     return dataset
 
 
@@ -36,10 +37,11 @@ def rename_keywords(dataset):
                 row[col] = row[col].replace(keyword_key, keyword_value)
     return dataset
 
+
 def strip_duplicates(dataset):
     # create a set
-
     return dataset
+
 
 # Shorten names to 10 characters
 def shorten_names(dataset):

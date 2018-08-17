@@ -1,3 +1,4 @@
+import sys
 from session import Session
 from utils import print_header, print_data
 from setData import load_excel, clean_data, check_data
@@ -17,6 +18,7 @@ def main(excel_file):
 
     interns = create_interns(dataset)
     session = Session(interns)
+    print_interns(interns)
 
     print_header("ENDORSERS")
     set_endorsers(interns)
@@ -27,4 +29,4 @@ def main(excel_file):
     get_pairs(interns)
 
 
-main("dataset2.xlsx")
+main("../intern_matching_dataset.xlsx")

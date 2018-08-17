@@ -34,7 +34,7 @@ def release_chaos_intern(interns):
 
 def print_interns(interns):
     for intern in interns:
-        print (intern.row, intern.name)
+        print (intern.row, intern.name, intern.team)
 
 
 def get_chaos_intern(interns):

@@ -25,3 +25,14 @@ The Gale-Shapley Stable Marriage Algorithm is implemented to manage differences 
 The result is:
   1) In general, interns will pair with more compatible interns earlier and less compatible interns later.
   2) At no point will there be 2 interns who would prefer to be with each other than with their current match.
+  
+### Dependencies
+
+python3 packages:
+  - re
+  - sys
+  - json
+  - numpy
+  - pandas
+  - tabulate
+  - collections
